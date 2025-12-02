@@ -137,6 +137,8 @@ export interface IChatAgentRequest {
 	agentId: string;
 	command?: string;
 	message: string;
+	/** The timestamp when this request was created, in milliseconds since the Unix epoch. */
+	timestamp: number;
 	attempt?: number;
 	enableCommandDetection?: boolean;
 	isParticipantDetected?: boolean;

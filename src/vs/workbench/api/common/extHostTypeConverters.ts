@@ -3155,6 +3155,7 @@ export namespace ChatAgentRequest {
 			prompt: request.message,
 			command: request.command,
 			attempt: request.attempt ?? 0,
+			timestamp: request.timestamp,
 			enableCommandDetection: request.enableCommandDetection ?? true,
 			isParticipantDetected: request.isParticipantDetected ?? false,
 			sessionId,
@@ -3180,6 +3181,8 @@ export namespace ChatAgentRequest {
 			delete (requestWithAllProps as any).id;
 			// eslint-disable-next-line local/code-no-any-casts
 			delete (requestWithAllProps as any).attempt;
+			// eslint-disable-next-line local/code-no-any-casts
+			delete (requestWithAllProps as any).timestamp;
 			// eslint-disable-next-line local/code-no-any-casts
 			delete (requestWithAllProps as any).enableCommandDetection;
 			// eslint-disable-next-line local/code-no-any-casts

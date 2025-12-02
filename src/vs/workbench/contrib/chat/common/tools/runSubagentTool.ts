@@ -221,6 +221,7 @@ export class RunSubagentTool extends Disposable implements IToolImpl {
 				requestId: invocation.callId ?? `subagent-${Date.now()}`,
 				agentId: defaultAgent.id,
 				message: args.prompt,
+				timestamp: Date.now(),
 				variables: { variables: [] },
 				location: ChatAgentLocation.Chat,
 				isSubagent: true,

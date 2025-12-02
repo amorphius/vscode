@@ -61,6 +61,11 @@ declare module 'vscode' {
 		readonly attempt: number;
 
 		/**
+		 * The timestamp when this request was created, in milliseconds since the Unix epoch.
+		 */
+		readonly timestamp: number;
+
+		/**
 		 * The session identifier for this chat request
 		 */
 		readonly sessionId: string;
@@ -147,9 +152,14 @@ declare module 'vscode' {
 		readonly editedFileEvents?: ChatRequestEditedFileEvent[];
 
 		/**
+		 * The timestamp when this request was created, in milliseconds since the Unix epoch.
+		 */
+		readonly timestamp?: number;
+
+		/**
 		 * @hidden
 		 */
-		constructor(prompt: string, command: string | undefined, references: ChatPromptReference[], participant: string, toolReferences: ChatLanguageModelToolReference[], editedFileEvents: ChatRequestEditedFileEvent[] | undefined);
+		constructor(prompt: string, command: string | undefined, references: ChatPromptReference[], participant: string, toolReferences: ChatLanguageModelToolReference[], editedFileEvents: ChatRequestEditedFileEvent[] | undefined, timestamp: number | undefined);
 	}
 
 	export class ChatResponseTurn2 {

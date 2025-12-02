@@ -923,6 +923,7 @@ export class ChatService extends Disposable implements IChatService {
 							requestId: request.id,
 							agentId: agent.id,
 							message,
+							timestamp: request.timestamp,
 							command: command?.name,
 							variables: variableData,
 							enableCommandDetection,
@@ -1172,6 +1173,7 @@ export class ChatService extends Disposable implements IChatService {
 				requestId: request.id,
 				agentId: request.response.agent?.id ?? '',
 				message: promptTextResult.message,
+				timestamp: request.timestamp,
 				command: request.response.slashCommand?.name,
 				variables: updateRanges(request.variableData, promptTextResult.diff), // TODO bit of a hack
 				location: ChatAgentLocation.Chat,
