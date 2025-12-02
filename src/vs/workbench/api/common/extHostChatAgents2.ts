@@ -742,7 +742,8 @@ export class ExtHostChatAgents2 extends Disposable implements ExtHostChatAgentsS
 			}
 
 			const editedFileEvents = isProposedApiEnabled(extension, 'chatParticipantPrivate') ? h.request.editedFileEvents : undefined;
-			const turn = new extHostTypes.ChatRequestTurn(h.request.message, h.request.command, varsWithoutTools, h.request.agentId, toolReferences, editedFileEvents, h.request.requestId);
+			const timestamp = isProposedApiEnabled(extension, 'chatParticipantPrivate') ? h.request.timestamp : undefined;
+			const turn = new extHostTypes.ChatRequestTurn(h.request.message, h.request.command, varsWithoutTools, h.request.agentId, toolReferences, editedFileEvents, h.request.requestId, timestamp);
 			res.push(turn);
 
 			// RESPONSE turn

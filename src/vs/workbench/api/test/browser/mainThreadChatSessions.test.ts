@@ -229,6 +229,7 @@ suite('ObservableChatSession', function () {
 			sessionResource: LocalChatSessionUri.forSession('test-session'),
 			agentId: 'test-agent',
 			message: 'Test prompt',
+			timestamp: Date.now(),
 			location: ChatAgentLocation.Chat,
 			variables: { variables: [] }
 		};
@@ -250,6 +251,7 @@ suite('ObservableChatSession', function () {
 			sessionResource: LocalChatSessionUri.forSession('test-session'),
 			agentId: 'test-agent',
 			message: 'Test prompt',
+			timestamp: Date.now(),
 			location: ChatAgentLocation.Chat,
 			variables: { variables: [] }
 		};
@@ -411,6 +413,7 @@ suite('MainThreadChatSessions', function () {
 			requestId: 'test-request',
 			agentId: 'test-agent',
 			message: 'my prompt',
+			timestamp: Date.now(),
 			location: ChatAgentLocation.Chat,
 			variables: { variables: [] }
 		};
